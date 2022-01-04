@@ -1,0 +1,20 @@
+﻿.ButtonTeclado {
+    background-color: #261402;
+    border-color: #F78310;
+    color: white;
+    font-size: 20;
+    border-width:2;
+    
+}
+.ButtonBorrar {
+    background-color: #252525;
+    color: white;
+    font-size: 17;
+}
+.ButtonIniciar {
+    background-color: #1B2028;
+    border-color: #242D2F;
+    color: white;
+    border-width: 2;
+    font-size: 20;
+}

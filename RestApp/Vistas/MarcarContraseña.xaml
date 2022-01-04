@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RestApp.Vistas.MarcarContraseña"
+             BackgroundColor="#1E1E1E">
+    <ContentPage.Resources>
+        <StyleSheet Source="/Estilos/EmarcadorContra.css" />
+    </ContentPage.Resources>
+   
+        <Grid>
+           
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+        <Grid >
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Margin="10" Grid.Column="0" Source="Buman.png" />
+            <Entry Grid.Column="1"
+                IsPassword="True" 
+                x:Name="txtContraseña" 
+                TextChanged="txtContraseña_TextChanged"            
+                TextColor="White"
+                HorizontalTextAlignment="Center" 
+                VerticalTextAlignment="Center"
+                   FontSize="70"
+                   />
+        </Grid>
+           
+            <Grid x:Name="Panelbotones" Grid.Row="1" Margin="300,20,300,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button x:Name="btn7" Clicked="btn7_Clicked" Grid.Row="0" Grid.Column="0" Text="7" StyleClass="ButtonTeclado" CornerRadius="15"/>
+                <Button x:Name="btn8" Clicked="btn8_Clicked" Grid.Row="0" Grid.Column="1" Text="8" StyleClass="ButtonTeclado" CornerRadius="15"/>
+                <Button x:Name="btn9" Clicked="btn9_Clicked" Grid.Row="0" Grid.Column="2" Text="9" StyleClass="ButtonTeclado" CornerRadius="15"/>
+                <Button x:Name="btn4" Clicked="btn4_Clicked" Grid.Row="1" Grid.Column="0" Text="4" StyleClass="ButtonTeclado" CornerRadius="15"/>
+                <Button x:Name="btn5" Clicked="btn5_Clicked" Grid.Row="1" Grid.Column="1" Text="5" StyleClass="ButtonTeclado" CornerRadius="15"/>
+                <Button x:Name="btn6" Clicked="btn6_Clicked" Grid.Row="1" Grid.Column="2" Text="6" StyleClass="ButtonTeclado" CornerRadius="15"/>
+                <Button x:Name="btn1" Clicked="btn1_Clicked" Grid.Row="2" Grid.Column="0" Text="1" StyleClass="ButtonTeclado" CornerRadius="15"/>
+                <Button x:Name="btn2" Clicked="btn2_Clicked" Grid.Row="2" Grid.Column="1" Text="2" StyleClass="ButtonTeclado" CornerRadius="15"/>
+                <Button x:Name="btn3" Clicked="btn3_Clicked" Grid.Row="2" Grid.Column="2" Text="3" StyleClass="ButtonTeclado" CornerRadius="15"/>
+                <Button x:Name="btnborrar" Clicked="btnborrar_Clicked" Grid.Row="3" Grid.Column="0" Text="Borrar" StyleClass="ButtonTeclado" CornerRadius="15"/>
+                <Button x:Name="btn0" Clicked="btn0_Clicked" Grid.Row="3" Grid.Column="1" Text="0" StyleClass="ButtonTeclado" CornerRadius="15"/>
+                <Button x:Name="btnIniciar" Clicked="btnBorrarCaract_Clicked" Grid.Row="3" Grid.Column="2" Text="Acceder" StyleClass="ButtonIniciar" CornerRadius="15"/>
+            </Grid>
+
+        </Grid >
+   
+</ContentPage>

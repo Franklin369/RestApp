@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"        
+             x:Class="RestApp.Vistas.Buscadorproductos">
+    <Grid >
+        <Frame Padding="20"
+               BackgroundColor="#1B2027"
+               >
+             <StackLayout Orientation="Vertical">
+                <StackLayout Margin="10,0,0,0"
+                    Orientation="Horizontal">
+                    <Button x:Name="btnvolver"
+                            Clicked="btnvolver_Clicked"
+                        Text="Volver"
+                            TextColor="White" 
+                            BackgroundColor="Transparent" 
+                            BorderColor="#C0FFC0"
+                            BorderWidth="2"
+                            CornerRadius="30"/>
+                    <SearchBar x:Name="txtbuscar"
+                           TextChanged="txtbuscar_TextChanged"
+                    PlaceholderColor="White"
+                       Placeholder="Buscar..."
+                       TextColor="White"
+                       CancelButtonColor="White"
+                       FontSize="20"/>
+                </StackLayout>
+               
+                 
+                <CollectionView Grid.Row="0" x:Name="ListaProductos"
+                           >
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical"                                    
+                                     Span="5"/>
+
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame CornerRadius="3"
+                               Padding="5" BackgroundColor="Transparent">
+                                <Button CornerRadius="5"
+                                    WidthRequest="150"
+                                    HeightRequest="100"
+                                    BackgroundColor="{Binding ColorHtml}"
+                                    TextColor="White" 
+                                     FontAttributes="Bold"
+                                  x:Name="btnproducto" Clicked="btnproducto_Clicked"
+                                   Text="{Binding Descripcion}" 
+                                    CommandParameter="{Binding Precio}"/>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </StackLayout>
+        </Frame>
+       
+    </Grid>
+       
+
+</ContentPage>

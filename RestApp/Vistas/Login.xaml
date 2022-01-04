@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RestApp.Vistas.Login">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#1E1E1E" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0"
+                Text="¿Quien esta Iniciando Sesion?" 
+                   TextColor="White"
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center"
+                   FontSize="25"
+                   FontAttributes="Bold" />
+            <ScrollView Grid.Row="1" Orientation="Vertical" >
+                  <FlexLayout Grid.Row="1" x:Name="PanelUsuarios"
+                        JustifyContent="SpaceAround"
+                        Wrap="Wrap"
+                              >
+                
+                  </FlexLayout>
+            </ScrollView>
+          
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

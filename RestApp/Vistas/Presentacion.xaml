@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:degradado="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             x:Class="RestApp.Vistas.Presentacion">
+    <Grid >
+        <degradado:PancakeView BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0">
+            <degradado:PancakeView.BackgroundGradientStops >
+                <degradado:GradientStopCollection>
+
+                    <degradado:GradientStop Color="#151515" Offset="0"/>
+                    <degradado:GradientStop Color="#181818" Offset="0.8"/>
+
+                </degradado:GradientStopCollection>
+            </degradado:PancakeView.BackgroundGradientStops>
+        </degradado:PancakeView>
+     
+            <StackLayout VerticalOptions="CenterAndExpand" >
+                <Image Source="Buman.png"
+                       Margin="5" x:Name="Logo"/>
+                <Label TextColor="#F8F9FA" Text="from"
+                       HorizontalOptions="CenterAndExpand"/>
+            <Label TextColor="#F0F0F0" 
+                       Text="C O D I G O 369"
+                       HorizontalOptions="CenterAndExpand"
+                       FontSize="20"
+                       FontAttributes="Bold"/>
+        </StackLayout>
+       
+            
+        
+    </Grid>
+</ContentPage>

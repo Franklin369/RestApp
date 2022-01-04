@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RestApp.Vistas.Ventas"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources >
+        <StyleSheet Source="/Estilos/EmarcadorContra.css"/>
+    </ContentPage.Resources>
+        <Grid BackgroundColor="#13181F">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin="0,0,0,10">
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="120"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" Orientation="Horizontal"
+                             Margin="10,10,0,0">
+                    <Button Text="Buscar..." x:Name="btnBuscar"
+                            Clicked="btnBuscar_Clicked"
+                            StyleClass="ButtonIniciar"/>
+                </StackLayout>
+            <CollectionView Grid.Row="1" BackgroundColor="#12171E"
+                           x:Name="listaDetalleVenta"
+                            Margin="10,10,10,0">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="1"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems Mode="Execute">
+                                    <SwipeItem Text="Eliminar"
+                                               IconImageSource="Borrarr.png"
+                                               BackgroundColor="#E83C40"
+                                               x:Name="btnBorrarDV1"
+                                               Invoked="btnBorrarDV1_Invoked"
+                                               CommandParameter="{Binding Iddetalleventa}"/>
+                                    
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <SwipeView.LeftItems>
+                                <SwipeItems Mode="Execute">
+                                    <SwipeItem Text="Eliminar"
+                                               IconImageSource="Borrarr.png"
+                                               BackgroundColor="#E83C40"
+                                               x:Name="btnBorrarDV2"
+                                               Invoked="btnBorrarDV2_Invoked"
+                                               CommandParameter="{Binding Iddetalleventa}"/>
+
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+
+                            <Grid BackgroundColor="#13181F"
+                                  RowSpacing="30"
+                                  VerticalOptions="CenterAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <BoxView Grid.Row="0"
+                                     BackgroundColor="#293542"/>
+                            <StackLayout Grid.Row="1"
+                                          Orientation="Horizontal"
+                                         Spacing="10"
+                                         VerticalOptions="CenterAndExpand">
+                                
+                                <Label TextColor="White" Grid.Column="0"
+                                       FontSize="16"
+                                       x:Name="lblDescripcion"
+                                       VerticalOptions="CenterAndExpand"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"
+                                       FontAttributes="Bold"
+                                       Text="{Binding Producto}"/>
+                                    <Label TextColor="#3DFF47" Grid.Column="1"
+                                       FontSize="16"
+                                       x:Name="lblPrecio"
+                                       Text="{Binding cantidad}"
+                                       VerticalTextAlignment="Center"
+                                      />
+                                    <Label TextColor="White" Grid.Column="1"
+                                       FontSize="16"
+                                      
+                                       Text="x"
+                                       VerticalTextAlignment="Center"
+                                      />
+                                    <Label TextColor="#3DFF47" Grid.Column="1"
+                                       FontSize="16"
+                                       Text="{Binding preciounitario}"
+                                      
+                                       VerticalTextAlignment="Center"
+                                      />
+                                    <Label TextColor="White" Grid.Column="1"
+                                       FontSize="16"
+                                       Text="{Binding Importe}"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalOptions="EndAndExpand"/>
+
+                                </StackLayout>
+                        </Grid> 
+                        </SwipeView>
+                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <StackLayout Grid.Row="2" 
+                         Margin="10,0,10,0"
+                         BackgroundColor="#101720"
+                         >
+                <StackLayout Orientation="Horizontal">
+                      <Label Text="Total:" TextColor="White"
+                           VerticalTextAlignment="Center"
+                           FontSize="20"/>
+                <Label Text="S/. 150000000" HorizontalOptions="EndAndExpand" 
+                           TextColor="White"
+                           FontSize="40"
+                           FontAttributes="Bold" 
+                           x:Name="lblTotal"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Mesas"
+                            x:Name="btnmesas"
+                            Clicked="btnmesas_Clicked"
+                           StyleClass="ButtonTeclado" CornerRadius="5" />
+                    <Button Text="Enviar" x:Name="btnenviar"
+                            Clicked="btnenviar_Clicked"
+                            StyleClass="ButtonIniciar"
+                            CornerRadius="5"/>
+                </StackLayout>
+                
+                
+            </StackLayout>
+            </Grid>
+        <Grid Grid.Column="1"  BackgroundColor="#151515">
+            <Grid.RowDefinitions >
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
+            <CollectionView Grid.Row="1" x:Name="Listagrupos"
+                            BackgroundColor="#151515">
+                <CollectionView.ItemsLayout >
+                    <GridItemsLayout Orientation="Horizontal"
+                                     Span="2"/>
+                </CollectionView.ItemsLayout>
+                
+                <CollectionView.ItemTemplate >
+                    <DataTemplate>
+                        <Frame CornerRadius="3" BackgroundColor="Transparent"
+                               Padding="5">
+                            <Button CornerRadius="5"
+                                    WidthRequest="150"
+                                    HeightRequest="100"
+                                    BackgroundColor="{Binding ColorHtml}"
+                                    TextColor="White" FontAttributes="Bold"
+                                    x:Name="btnGrupo"
+                                    Text="{Binding Grupo}"
+                                    CommandParameter="{Binding Idgrupo}"
+                                    Clicked="btnGrupo_Clicked"/>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <CollectionView Grid.Row="0" x:Name="ListaProductos"
+                           BackgroundColor="#151A23">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"                                    
+                                     Span="5"/>
+                    
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="3"
+                               Padding="5" BackgroundColor="Transparent">
+                            <Button CornerRadius="5"
+                                    WidthRequest="150"
+                                    HeightRequest="100"
+                                    BackgroundColor="{Binding ColorHtml}"
+                                    TextColor="White" 
+                                     FontAttributes="Bold"
+                                  x:Name="btnproducto" Clicked="btnproducto_Clicked"
+                                   Text="{Binding Descripcion}" 
+                                    CommandParameter="{Binding Precio}"/>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

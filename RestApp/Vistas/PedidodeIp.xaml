@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:degradado="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             x:Class="RestApp.Vistas.PedidodeIp" >
+    <Grid BackgroundColor="#1E1E1E">
+        <degradado:PancakeView CornerRadius="0,20,20,0" Margin="10" BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0">
+            <degradado:PancakeView.BackgroundGradientStops>
+                <degradado:GradientStopCollection>
+                    <degradado:GradientStop Color="#F54B30" Offset="0"/>
+                    <degradado:GradientStop Color="#E83928" Offset="0.8"/>
+                </degradado:GradientStopCollection>
+            </degradado:PancakeView.BackgroundGradientStops>
+
+            <StackLayout BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="CenterAndExpand">
+                <Image Source="Buman.png" HeightRequest="100" WidthRequest="150"/>
+                <Label Text="Ingrese la IP de su Pc principal"
+                       FontSize="24" HorizontalOptions="Center" FontAttributes="Bold"
+                       TextColor="White"/>
+                <Entry x:Name="txtconexion" Placeholder="Ingrese la IP"
+                       TextColor="White"
+                       PlaceholderColor="WhiteSmoke"/>
+                <Button Text="Conectar" BackgroundColor="#1D2A3A"
+                        x:Name="btnconectar"
+                        Clicked="btnconectar_Clicked"
+                        CornerRadius="10"
+                        TextColor="White"
+                        FontAttributes="Bold"/>
+
+            </StackLayout>
+            
+        </degradado:PancakeView>
+    </Grid>
+</ContentPage>
