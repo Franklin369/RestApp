@@ -1,5 +1,6 @@
 # **DESCRIPCIÓN DEL PROYECTO**
 #### - Vas a DESCARGAR el complemento del sistema para restaurante. Es una app para que los mozos puedan hacer los pedidos desde un celular o una tablet
+#### - La app esta creada en Xamarin forms
 
 #### - Para que sepas como ejecutar el proyecto y que requieres para hacerlo ve este video: [EJECUTAR EL CODIGO](https://t.me/Codigo369 "EJECUTAR EL CODIGO")
 
